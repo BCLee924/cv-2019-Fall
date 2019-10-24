@@ -28,22 +28,30 @@ python3 harris_corner.py
 
 ```python
 
-savefig = 'yes' #if you want to show each picture of processing. Otherwise, let it be 'None' or 'No' 
+# If you want to show each picture of processing. Otherwise, let it be 'None' or 'No' 
+savefig = 'yes' 
 
+#######################
 ## Sobel edge detect ##
+#######################
 direction_gradient, magnitude_gradient = sobel_edge_detection(img, Gaussian_size)
 
+##########################
 ## Harris Corner detect ##
+##########################
 rr, cc = harris_corner(img_og, window=window, thresh=thresh, save=savefig)
 
-
-#plot the corners ---------------------------
+# ============================================
+# plot the corners ---------------------------
+# ============================================
 plt.imshow(img_og, cmap='gray')
 plt.plot(cc, rr, 'r+', markersize='3')
 plt.title('#Corners: {}'.format(rr.shape[0]))
 plt.show()
 
-#plot the sobel_edge ------------------------
+# ============================================
+# plot the sobel_edge ------------------------
+# ============================================
 fig2, ax2 = plt.subplots(1, 2, dpi=100)
 ax2[0].imshow(magnitude_gradient)
 ax2[1].imshow(direction_gradient)
