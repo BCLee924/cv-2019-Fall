@@ -31,13 +31,14 @@ python3 harris_corner.py
 # If you want to show each picture of processing. Otherwise, let it be 'None' or 'No' 
 savefig = 'yes' 
 
-#####################
-# Sobel edge detect #
+
+## Sobel edge detect ##
 direction_gradient, magnitude_gradient = sobel_edge_detection(img, Gaussian_size)
 
-########################
-# Harris Corner detect #
+
+## Harris Corner detect ##
 rr, cc = harris_corner(img_og, window=window, thresh=thresh, save=savefig)
+
 
 # =================
 # plot the corners 
