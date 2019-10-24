@@ -33,12 +33,10 @@ savefig = 'yes'
 
 #####################
 # Sobel edge detect #
-#####################
 direction_gradient, magnitude_gradient = sobel_edge_detection(img, Gaussian_size)
 
 ########################
 # Harris Corner detect #
-########################
 rr, cc = harris_corner(img_og, window=window, thresh=thresh, save=savefig)
 
 # =================
